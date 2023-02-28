@@ -1,0 +1,39 @@
+{% extends 'bbsApp/base.html' %}
+{% load static %}
+
+{% block title %}アカウント登録{% endblock %}
+
+{% block content %}
+<main class="form-signin">
+    <form method="post">{% csrf_token %}
+        <p>ここは記事投稿をするためのアカウントを作成するページです</p>
+        <h1 class="h3 mb-3 fw-normal">アカウント登録</h1>
+
+        {% if error %}
+        {{ error }}
+        {% endif %}
+        <!--
+        <div class="form-floating">
+        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+        </div>
+        -->
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingName" placeholder="name" name="username_data" required>
+            <label for="floatingInput">User name</label>
+        </div>
+        <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password_data">
+        <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    </form>
+</main>
+{% endblock %}

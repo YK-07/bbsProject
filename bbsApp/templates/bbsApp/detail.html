@@ -1,0 +1,25 @@
+{% extends 'bbsApp/base.html' %}
+{% load static %}
+
+{% block title %}メイン{% endblock %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class='container'>
+    <div class="card">
+        <h5 class="card-header">{{ object.title }}</h5>
+        <div class="card-body">
+            
+            <h5 class="card-title">投稿者：{{ object.user_name }}</h5>
+            <h5 class="card-title">大学名：{{ object.university }}</h5>
+            <h5 class="card-title">内容：{{ object.content }}</h5>
+            <h5 class="card-title">{{ object.evaluation }}</h5>
+            <h5 class="card-title">レビューが参考になった人：{{ object.useful_review }}人</h5>
+            <a href="#" class="btn btn-primary">参考になった</a>
+            <a href="{% url 'main' %}" class="btn btn-primary">戻る</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'bbsApp/base.html' %}
+{% load static %}
+
+{% block title %}トップ{% endblock %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="index_introduce">
+    <p>就活って何から始めたらいいの？地方学生だけど、首都圏で就活したい！</p>
+    <p>他の学生はどうやって就活してる？新入生だけど、就活が不安</p>
+    <p>そんな悩みを皆で解決しよう！</p>
+    <p>新入生は就活に関して知っておくべきことを知り、不安なく大学生活を過ごそう！！</p>
+</div>
+<div class="index_body">
+    <img src="{% static "images/CampusLife.jpg"%}" class="index_image">
+    <p>就活の悩みを共有して、不安を解消しよう</p>
+    <p>就活の経験談を後輩たちに伝えて、就活をサポートしよう</p>
+</div>
+
+<p class="index_main"><a href="{% url 'main' %}">メインページへGo!</a></p>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'bbsApp/base.html' %}
+{% load static %}
+
+{% block title %}ログイン{% endblock %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+<main class="form-signin">
+    <form method="post">{% csrf_token %}
+        {% if error %}
+        {{ error }}
+        {% endif %}
+
+        <h1 class="h3 mb-3 fw-normal">ログイン</h1>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingName" placeholder="name" name="username_data" required>
+            <label for="floatingInput">User name</label>
+        </div>
+        <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password_data" required>
+        <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    </form>
+</main>
+{% endblock %}
